@@ -16,12 +16,13 @@ if __name__ == "__main__":
                 + (image[:, :, 1] == 255) + (image[:, :, 2] == 255))
         # Initialize array if it is the first iteration
         if (idx == 32):
-            saturated = np.array([red_sat, green_sat, blue_sat, all_sat,
+            saturated = np.array([idx-31, red_sat, green_sat, blue_sat, all_sat,
                                   any_sat])
         # Append the saturated values to the result matrix.
         else:
             saturated = np.vstack((saturated,
-                    np.array([red_sat, green_sat, blue_sat, all_sat, any_sat])))
+                    np.array([idx-31, red_sat, green_sat, blue_sat, all_sat,
+                              any_sat])))
     # Save results to text file.
     out_file = "results.txt"
     header = "RED\tGREEN\tBLUE\tALL\tANY"
