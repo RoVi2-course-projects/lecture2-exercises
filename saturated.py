@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import numpy as np
+import cv2
 from scipy import misc
 
 if __name__ == "__main__":
