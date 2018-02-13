@@ -14,7 +14,6 @@ def plot_figure(original_image, image_name):
         segmented_image = color_chan[:, :] > 0.7*255
         plot = plt.subplot(2, 2, idx+2)
         plt.imshow(segmented_image, 'gray')
-    plt.show()
 
 if __name__ == "__main__":
 
@@ -25,3 +24,4 @@ if __name__ == "__main__":
     plot_figure(image_underexposed, "Underexposed")
     plot_figure(image_overexposed, "Overexposed")
     plot_figure(image_mediumexposed, "Neutralexposed")
+    plt.show()
